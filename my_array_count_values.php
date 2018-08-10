@@ -10,15 +10,14 @@ function my_array_count_values(array $array):array
 {
     $array_counted_values = [];
     foreach($array as $item){
-            if(gettype($item) !== 'string' && gettype($item) !== 'integer'){
+            if(!is_int($item) && !is_string($item)){
                     trigger_error('my_array_count_values(): Can only count STRING and INTEGER values!',E_USER_WARNING);
                     continue;
             }
             if(!isset($array_counted_values[$item])){
-                    $array_counted_values[$item] = 1;
-            }else{
-                    $array_counted_values[$item]++;
-            }            
+                    $array_counted_values[$item] = 0;
+            }
+            $array_counted_values[$item]++;                       
     }
     return $array_counted_values;
 }
