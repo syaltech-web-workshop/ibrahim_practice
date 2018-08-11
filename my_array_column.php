@@ -42,4 +42,5 @@ $two->id = 2;
 $records_object = [$one,$two];
 
 print_r(my_array_column($records_array,'name','id'));
+print_r(my_array_column($records_array,'name'));
 print_r(my_array_column($records_object,'name','id'));
